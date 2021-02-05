@@ -7,7 +7,6 @@ function displayMessageFromNodeList(list){
 	list.forEach(element => logMessageConsole(element.innerHTML));
 }
 
-
 function logMessageConsole(message){
   console.log(getMessageFormatted(message));
 }

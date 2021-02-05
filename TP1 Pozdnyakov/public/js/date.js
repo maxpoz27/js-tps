@@ -1,5 +1,3 @@
 function logDate(message){
-  console.log(new Date().toLocaleString().replace(",","")+ ` ${message}`);
+  logMessageConsole(new Date().toLocaleString()+ ` ${message}`);
 }
-
-logDate("question bonus");

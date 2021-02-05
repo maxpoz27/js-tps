@@ -1,3 +1,4 @@
+function CreerNews(){
 let button =document.querySelector('#submitNews');
 button.onclick = createArticleClick;
 function createArticleClick(){
@@ -6,13 +7,13 @@ function createArticleClick(){
   h3.innerHTML=document.querySelector('#addNews').value;
   if(!verifExist(h3.innerHTML)){
     let article = document.createElement('article');
-    article.appendChild(h3);
     let section = document.querySelector('section');
+    article.appendChild(h3);
     section.appendChild(article);
   }
-  return false;
+    return false;
+  }
 }
-
 function verifExist(nomArticle){
   let arr=[];
   document.querySelectorAll("h3.title").forEach(title => arr.push(title.innerHTML));
@@ -20,8 +21,8 @@ function verifExist(nomArticle){
     let erreur=document.createElement('p');
     erreur.innerHTML=`Erreur article ${nomArticle} existe deja, question bonus`;
     erreur.style.color="red";
-    let formB=document.querySelector('#addNewsForm');
-    formB.insertBefore(erreur,formB.firstChild);
+    let form=document.querySelector('#addNewsForm');
+    form.insertBefore(erreur,form.firstChild);
     return true;
   }
   return false;
