@@ -12,9 +12,9 @@ class Article{
   createArticle() {
         let newArticle = document.createElement('article');
         let h3 = document.createElement('h3');
-        let news = document.querySelector('#news');
         let description = document.createElement('p');
         let button = document.createElement('button');
+        let news = document.querySelector('#news');
         description.innerHTML= this.description;
         button.innerHTML= "View Detail";
         button.onclick= RecupParent;
@@ -31,10 +31,10 @@ class Article{
   checkArticleUnicity() {
 
       let h3s = document.querySelectorAll('.title');
-      let ids = document.querySelectorAll('article');
+      let idsArticles = document.querySelectorAll('article');
 
       for (let i = 0; i < h3s.length; i++) {
-          if (h3s[i].innerHTML.toLowerCase().trim() === this.titre.toLowerCase().trim() || ids[i].id === this.id) {
+          if (h3s[i].innerHTML.toLowerCase().trim() === this.titre.toLowerCase().trim() || idsArticles[i].id.toLowerCase().trim() === this.id.toLowerCase().trim()) {
               let error = document.createElement('p');
               error.innerHTML = 'Erreur article deja existant';
               error.style.color = ROUGE;
