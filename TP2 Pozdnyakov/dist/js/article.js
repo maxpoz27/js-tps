@@ -61,8 +61,7 @@ class Article{
           return;
       }
 
-      this.createArticle();
-      this.ajoutIdArticle();
+      this.createArticle().ajoutIdArticle();
       return this;
   }
   ajoutIdArticle(){
