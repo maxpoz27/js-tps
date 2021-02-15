@@ -34,8 +34,6 @@ class Article{
       let ids = document.querySelectorAll('article');
 
       for (let i = 0; i < h3s.length; i++) {
-        console.log(this.titre.toLowerCase().trim());
-        console.log(h3s[i].innerHTML.toLowerCase().trim());
           if (h3s[i].innerHTML.toLowerCase().trim() === this.titre.toLowerCase().trim() || ids[i].id === this.id) {
               let error = document.createElement('p');
               error.innerHTML = 'Erreur article deja existant';
