@@ -1,0 +1,4 @@
+ajoutIdArticle();
+onClickDetail();
+articleDeJson();
+addArticleForm();
