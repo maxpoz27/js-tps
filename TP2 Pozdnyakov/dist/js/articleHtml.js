@@ -81,6 +81,6 @@ function onClickDetail(){
 }
 
 function RecupParent(){
-  let p =this.parentNode.querySelector('p').innerHTML;
-  logMessageWithDate(p);
+  let p =this.parentNode.querySelector('p');
+  logMessageWithDate(p.innerHTML);
 }
