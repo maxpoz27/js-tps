@@ -17,7 +17,7 @@ class Article{
         let news = document.querySelector('#news');
         description.innerHTML= this.description;
         button.innerHTML= "View Detail";
-        button.onclick= RecupParent;
+        button.onclick= this.RecupParent;
         newArticle.id = this.id;
         h3.innerHTML = this.titre;
         h3.classList.add('title');
@@ -74,7 +74,7 @@ class Article{
   onClickDetail(){
     let buttons = document.querySelectorAll('button');
     buttons.forEach( button => {
-      button.onclick= RecupParent;
+      button.onclick= this.RecupParent;
     });
     return this;
   }
