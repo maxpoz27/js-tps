@@ -33,8 +33,8 @@ class Article {
     checkArticleUnicity() {
         let h3s = $('.title');
         h3s.each(function(i,val){
-          if ($(val).html().toLowerCase().trim() === this.title.toLowerCase().trim()) {
-
+          if ($(val).html().toLowerCase().trim() === $(this).attr('title').toLowerCase().trim()) {
+            console.log($(val).html().toLowerCase().trim() === $(this).attr('title').toLowerCase().trim());
             addError('Erreur article deja existant', form);
             return false;
           }
