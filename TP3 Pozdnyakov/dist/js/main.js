@@ -1,7 +1,4 @@
-
-
-
-//iterate();
+iterate();
 
 let h1 = $('h1');
 logMessageWithDate(h1.html());
@@ -13,9 +10,8 @@ logMessageWithDate(titleNews.html());
 		logMessageWithDate($(val).html());
 });
 
-let button = $('input[name="addNewsBtn"]');
+let button = $(':input[name="addNewsBtn"]')[0];
 bindButton(button);
-console.log(button);
 
 let articles = JSON.parse(ALLNEWSJSON);
 $.each(articles,function(i,element){
