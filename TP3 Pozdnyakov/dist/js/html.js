@@ -3,12 +3,11 @@ function bindButton(button){
 		event.preventDefault();
     let title = $('input[name="titleToAdd"]');
     let description = $('textarea[name="descriptionToAdd"]');
-    let article = new Article(0 title.val(), description.val());
+    let article = new Article(0, title.val(), description.val());
 		if(article.addArticle()){
 			title.val('');
       description.val('');
     }
-
 		return false;
 	};
 }
