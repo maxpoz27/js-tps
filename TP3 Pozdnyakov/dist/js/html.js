@@ -18,8 +18,8 @@ function clearErrors(){
 
     if(errors){
         while(errors.length > 0 && errors[0].parentNode != null){
-            errors[0].parentNode.removeChild(errors[0]);
-        }
+					errors[0].remove(errors[0]);
+      	}
     }
 }
 

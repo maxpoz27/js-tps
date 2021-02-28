@@ -78,7 +78,7 @@ class Article {
       let articles = $('article');
       let i=1;
       articles.each(function(compteur,article) {
-        article.id = i;
+        $(article).attr('id', i);
         i=i+1;
       });
       return this;
