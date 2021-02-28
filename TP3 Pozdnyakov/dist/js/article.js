@@ -66,12 +66,21 @@ class Article {
             return false;
         }
 
-        this.createArticleHtml();
+        this.createArticleHtml().ajoutIdArticle();
         return true;
     }
 
     bindButtonViewdetail(button, callback){
         button.onclick = callback;
         return this;
+    }
+    ajoutIdArticle(){
+      let articles = $('article');
+      let i=1;
+      articles.each(function(compteur,article) {
+        article.id = i;
+        i=i+1;
+      });
+      return this;
     }
 }
