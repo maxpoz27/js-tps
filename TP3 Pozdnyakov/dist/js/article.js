@@ -15,11 +15,13 @@ class Article {
         let p = $('<p/>');
         let button = $('<button/>');
         let news = $('#news');
+
         h3.html(this.title);//|| h3.html($(this).attr('title'));
         p.html(this.description);//|| p.html($(this).attr('description'));
         button.html('View detail');
         h3.attr('class','title');
         this.bindButtonViewdetail(button[0], viewdetailClick);
+
         newArticle.attr('id',this.id);// newArticle.attr('id',$(this).attr('id'));
         newArticle.append(h3);
         newArticle.append(p);
