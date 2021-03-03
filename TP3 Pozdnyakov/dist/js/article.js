@@ -33,7 +33,7 @@ class Article {
         let h3s = $('h3.title');
         let form = $('#addNewsForm');
         for (let i = 0; i < h3s.length; i++) {
-          if (h3s[i].innerHTML.toLowerCase().trim() === $(this).attr('title').toLowerCase().trim()) {
+          if ($(h3s[i]).html().toLowerCase().trim() === this.title.toLowerCase().trim()) {
             addError('Erreur article deja existant', form);
             return false;
           }
