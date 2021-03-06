@@ -25,4 +25,4 @@ $.each(buttons,function(i,btn){
 	btn.onclick = viewdetailClick;
 });
 changementOnglet('recherche');
-<!-- changementOngletJQ('recherche') existe aussi au cas ou -->
+<!--changementOngletJQ('recherche') existe aussi au cas ou -->
