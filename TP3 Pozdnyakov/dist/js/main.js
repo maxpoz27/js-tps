@@ -24,3 +24,4 @@ let buttons = $('button');
 $.each(buttons,function(i,btn){
 	btn.onclick = viewdetailClick;
 });
+changementOnglet('recherche');

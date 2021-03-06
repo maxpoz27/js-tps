@@ -31,6 +31,23 @@ function addError(message, parent){
     parent.prepend(error);
 }
 
+function changementOnglet(nameClass){
+    let onglet;
+    switch(nameClass.toLowerCase().trim()){
+      case 'recherche':
+        onglet= document.querySelector('.AjoutArticle');
+        onglet.hidden=true;
+        document.querySelector('div.Recherche').hidden=false;
+        break;
+      case 'ajoutarticle':
+        onglet=document.querySelector('.Recherche');
+        onglet.hidden=true;
+        document.querySelector('div.AjoutArticle').hidden=false;
+        break;
+    }
+}
+
+
 function viewdetailClick(){
     let p = $(this).parent().children('p');
     logMessageWithDate(p.html());
