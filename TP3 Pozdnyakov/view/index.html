@@ -7,46 +7,52 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		 crossorigin="anonymous"></script>
 	</head>
-
 	<body>
 		<h1> TP1 JS </h1>
-		<section id="news">
-			<h2 id="titleNews">h2 qui etait vide</h2>
-			<article id="1">
-				<h3 class="title">News 1</h3>
-				<p>Ma super news 1</p>
-				<button>View detail</button>
-			</article>
+		<div class="">
+			<a href="#" onclick="changementOnglet('Recherche')">Recherche</a>
+			<a href="#" onclick="changementOnglet('AjoutArticle')">AjoutArticle</a>
+			<div class="Recherche">
+				<section id="news">
+					<h2 id="titleNews">h2 qui etait vide</h2>
+					<article id="1">
+						<h3 class="title">News 1</h3>
+						<p>Ma super news 1</p>
+						<button>View detail</button>
+					</article>
 
-			<article id="2">
-				<h3 class="title">News 2</h3>
-				<p>Ma super news 2</p>
-				<button>View detail</button>
-			</article>
+					<article id="2">
+						<h3 class="title">News 2</h3>
+						<p>Ma super news 2</p>
+						<button>View detail</button>
+					</article>
 
-			<article id="3">
-				<h3 class="title">News 3</h3>
-				<p>Ma super news 3</p>
-				<button>View detail</button>
-			</article>
-		</section>
-		<form id="addNewsForm">
-			<fieldset>
-			<label>Nom de la news :</label><br/>
-			<input name="titleToAdd" type="text" /><br/>
-
-			<label>Description de la news :</label><br/>
-			<textarea name="descriptionToAdd"></textarea><br/>
-			<input type="submit" name="addNewsBtn" />
-			</fieldset>
-		</form>
+					<article id="3">
+						<h3 class="title">News 3</h3>
+						<p>Ma super news 3</p>
+						<button>View detail</button>
+					</article>
+				</section>
+			</div>
+			<div class="AjoutArticle">
+				<form id="addNewsForm">
+					<fieldset>
+						<label>Nom de la news :</label><br/>
+						<input name="titleToAdd" type="text" /><br/>
+						<label>Description de la news :</label><br/>
+						<textarea name="descriptionToAdd"></textarea><br/>
+						<input type="submit" name="addNewsBtn" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
 	</body>
-
 	<script src="../dist/js/article.js"></script>
 	<script src="../dist/js/const.js"></script>
 	<script src="../dist/js/log.js"></script>
 	<script src="../dist/js/math.js"></script>
 	<script src="../dist/js/html.js"></script>
-	<script src="../dist/js/ajax.js"></script>
+	<script src="../dist/js/onglet.js"></script>
+<!--<script src="../dist/js/ajax.js"></script>-->
 	<script src="../dist/js/main.js"></script>
 </html>

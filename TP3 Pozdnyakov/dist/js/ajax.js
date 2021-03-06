@@ -10,7 +10,16 @@ var url = 'http://newsapi.org/v2/everything?q=minecraft&from='+ today +'&sortBy=
 $.ajax({
 	url: url,
 	method: 'GET'
-})
+	dataType: 'jsonp',
+	cors: true ,
+	contentType:'application/json',
+	secure: true,
+	headers: {
+	    'Access-Control-Allow-Origin': '*',
+	},
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
+	})
 .done(function(data, textStatus, xhr) {
 	if(xhr.status >= 300 && xhr.status < 400){
 		console.log('Attention redirection');
