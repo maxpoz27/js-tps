@@ -39,19 +39,20 @@ function viewdetailClick(){
 }
 
 
+// !!!!!!!!!!!!!!!! Changement d'onglet avec JS
 function changementOnglet(nameClass){
 	switch(nameClass.toLowerCase().trim()){
 		case 'recherche':
-		document.querySelector('.AjoutArticle').hidden=true;
-		document.querySelector('div.Recherche').hidden=false;
-		break;
+			document.querySelector('.AjoutArticle').hidden=true;
+			document.querySelector('div.Recherche').hidden=false;
+			break;
 		case 'ajoutarticle':
-		document.querySelector('.Recherche').hidden=true;
-		document.querySelector('div.AjoutArticle').hidden=false;
-		break;
+			document.querySelector('.Recherche').hidden=true;
+			document.querySelector('div.AjoutArticle').hidden=false;
+			break;
 	}
 }
-// !!!!!!!!!!!!!!!! Changement d'onglet avec Jquery
+// !!!!!!!!!!!!!!!!! Changement d'onglet jquery
 function changementOngletJQ(nameClass){
 	switch(nameClass.toLowerCase().trim()){
 		case 'recherche':
@@ -69,7 +70,7 @@ function recherche(button){
 	button.onclick = function(event){
 		event.preventDefault();
 		let texte = $('input[name="textToAdd"]').val();
-		if(window.find(texte,false,false,true,false)){
+		if(window.find(texte,false,false,true)){
 			$(button).val('Prochain');
 		};
 	}

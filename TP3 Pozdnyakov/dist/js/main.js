@@ -23,7 +23,13 @@ let buttons = $('button');
 $.each(buttons,function(i,btn){
 	btn.onclick = viewdetailClick;
 });
-changementOnglet('recherche');
-<!--changementOngletJQ('recherche') existe aussi au cas ou -->
+
+let anchors = $('a');
+anchors.each(function(i,a){
+  a.onclick = function(){
+    changementOngletJQ($(a).html());
+  }
+})
+<!--changementOnglet($(a).html()); existe aussi au cas ou -->
 
 recherche($('input[name="submitText"]')[0]);

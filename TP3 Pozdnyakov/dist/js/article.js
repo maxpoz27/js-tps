@@ -27,7 +27,7 @@ class Article {
         newArticle.append(p);
         newArticle.append(button);
         news.append(newArticle);
-        changementOnglet('recherche');
+        changementOngletJQ('recherche');
         return this;
     }
     checkArticleUnicity() {
