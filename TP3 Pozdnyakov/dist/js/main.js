@@ -12,7 +12,6 @@ logMessageWithDate(titleNews.html());
 
 let button = $(':input[name="addNewsBtn"]')[0];
 bindButton(button);
-
 let articles = JSON.parse(ALLNEWSJSON);
 $.each(articles,function(i,element){
 
@@ -26,3 +25,5 @@ $.each(buttons,function(i,btn){
 });
 changementOnglet('recherche');
 <!--changementOngletJQ('recherche') existe aussi au cas ou -->
+
+recherche($('input[name="submitText"]')[0]);

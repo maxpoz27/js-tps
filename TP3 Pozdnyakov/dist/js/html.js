@@ -51,7 +51,7 @@ function changementOnglet(nameClass){
 		break;
 	}
 }
-
+// !!!!!!!!!!!!!!!! Changement d'onglet avec Jquery
 function changementOngletJQ(nameClass){
 	switch(nameClass.toLowerCase().trim()){
 		case 'recherche':
@@ -62,5 +62,15 @@ function changementOngletJQ(nameClass){
 			$('.Recherche').hide();
 			$('.AjoutArticle').show();
 			break;
+	}
+}
+
+function recherche(button){
+	button.onclick = function(event){
+		event.preventDefault();
+		let texte = $('input[name="textToAdd"]').val();
+		if(window.find(texte,false,false,true,false)){
+			$(button).val('Prochain');
+		};
 	}
 }
