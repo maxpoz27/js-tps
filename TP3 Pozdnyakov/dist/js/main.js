@@ -30,6 +30,6 @@ anchors.each(function(i,a){
     changementOngletJQ($(a).attr('id'));
   }
 })
-<!--changementOnglet($(a).html()); existe aussi au cas ou -->
+<!--changementOnglet($(a).attr('id')); existe aussi au cas ou -->
 
 recherche($('input[name="submitText"]')[0]);
