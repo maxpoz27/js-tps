@@ -53,8 +53,8 @@ function changementOnglet(nameClass){
 	}
 }
 // !!!!!!!!!!!!!!!!! Changement d'onglet jquery
-function changementOngletJQ(nameClass){
-	switch(nameClass.toLowerCase().trim()){
+function changementOngletJQ(nameId){
+	switch(nameId.toLowerCase().trim()){
 		case 'recherche':
 			$('.AjoutArticle').hide();
 			$('.Recherche').show();

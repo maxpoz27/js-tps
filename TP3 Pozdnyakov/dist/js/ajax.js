@@ -9,7 +9,7 @@ var url = 'http://newsapi.org/v2/everything?q=minecraft&from='+ today +'&sortBy=
 
 $.ajax({
 	url: url,
-	method: 'GET'
+	method: 'GET',
 	dataType: 'jsonp',
 	cors: true ,
 	contentType:'application/json',
@@ -19,22 +19,22 @@ $.ajax({
 	},
 	beforeSend: function (xhr) {
 	    xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
+	}})
+	.done(function(data, textStatus, xhr) {
+		if(xhr.status >= 300 && xhr.status < 400){
+			console.log('Attention redirection');
+    	console.log(xhr);
+	  	console.log(xhr.status);
+	  	console.log(textStatus);
+	  	console.log(data); //JSON
+	  	console.log(data.headers); //JSON
+  	}
 	})
-.done(function(data, textStatus, xhr) {
-	if(xhr.status >= 300 && xhr.status < 400){
-		console.log('Attention redirection');
-    console.log(xhr);
-	  console.log(xhr.status);
-	  console.log(textStatus);
-	  console.log(data); //JSON
-	  console.log(data.headers); //JSON
-  }
-})
-.fail(function(xhr, textStatus, error) {
-	console.log(xhr.status);
-	console.log(textStatus);
-	throw new Error(error);
-});
+	.fail(function(xhr, textStatus, error) {
+		console.log(xhr.status);
+		console.log(textStatus);
+		throw new Error(error);
+	});
 
 /*
 $.get({ url: "https://httpbin.org/get" })
