@@ -1,0 +1,18 @@
+{
+  "name": "tp4-pozdnyakov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "npm"
+  ],
+  "author": "maxpoz",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
