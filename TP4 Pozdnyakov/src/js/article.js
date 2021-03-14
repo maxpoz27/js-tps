@@ -10,34 +10,36 @@ class Article {
     }
 
     createArticleHtml() {
-        let newArticle = $('<article/>');
-        let h3 = $('<h3/>');
-        let p = $('<p/>');
-        let button = $('<button/>');
+        let newArticle = $('<article></article>');
+        let h3 = $('<h3></h3>');
+        let p = $('<p></p>');
+        let button = $('<button></button>');
         let news = $('#news');
 
-        h3.html(this.title);//|| h3.html($(this).attr('title'));
-        p.html(this.description);//|| p.html($(this).attr('description'));
+        h3.html(this.title);
+        p.html(this.description);
         button.html('View detail');
-        h3.attr('class','title');
-        this.bindButtonViewdetail(button[0], viewdetailClick);
+        this.bindButtonViewdetail(button, viewdetailClick);
+        h3.addClass('title');
+        newArticle.attr('id', this.id);
 
-        newArticle.attr('id',this.id);// newArticle.attr('id',$(this).attr('id'));
         newArticle.append(h3);
         newArticle.append(p);
         newArticle.append(button);
         news.append(newArticle);
-        return this;
     }
+
     checkArticleUnicity() {
-        let h3s = $('h3.title');
-        let form = $('#addNewsForm');
+        let h3s = $('.title');
+
         for (let i = 0; i < h3s.length; i++) {
-          if ($(h3s[i]).html().toLowerCase().trim() === this.title.toLowerCase().trim()) {
-            addError('Erreur article deja existant', form);
-            return false;
-          }
+            if ($(h3s[i]).html().toLowerCase().trim() === this.title.toLowerCase().trim()) {
+                addError('Erreur article deja existant', $('#addNewsForm'));
+
+                return false;
+            }  
         }
+
         return true;
     }
 
@@ -57,7 +59,7 @@ class Article {
         return true;
     }
 
-    addArticle() {
+    addArticle() {  
         clearErrors();
 
         if (!this.checkValue()) {
@@ -67,22 +69,21 @@ class Article {
         if (!this.checkArticleUnicity()) {
             return false;
         }
-
-        this.createArticleHtml().ajoutIdArticle();
+        
+        this.createArticleHtml();
         return true;
     }
 
     bindButtonViewdetail(button, callback){
-        button.onclick = callback;
-        return this;
+        button.click(callback);
     }
-    ajoutIdArticle(){
-      let articles = $('article');
-      let i=1;
-      articles.each(function(compteur,article) {
-        $(article).attr('id', i);
-        i=i+1;
-      });
-      return this;
+
+    static getNextId(){
+        let article = $('article:last');
+
+        if(article.length == 0)
+            return 1;
+
+        return article.attr('id') + 1;
     }
 }

@@ -1,3 +1,10 @@
+let tabs = $('.tab');
+tabs.each(function(){
+	$(this).click(switchTab);
+});
+let button = $('input[name="addNewsBtn"]');
+bindButton(button);
+/*
 iterate();
 
 let h1 = $('h1');
@@ -6,21 +13,56 @@ logMessageWithDate(h1.html());
 let titleNews = $('#titleNews');
 logMessageWithDate(titleNews.html());
 
- $('.title').each(function(i,val){
-		logMessageWithDate($(val).html());
+let titles = $('.title');
+titles.each(function(){
+	logMessageWithDate($(this).html())
 });
 
-let button = $(':input[name="addNewsBtn"]')[0];
-bindButton(button);
+
+
+let buttons = $('article button');
+buttons.each(function(){
+	$(this).click(viewdetailClick);
+});
+
 
 let articles = JSON.parse(ALLNEWSJSON);
-$.each(articles,function(i,element){
+articles.forEach(function(element){ //on parcours un élément JSON ici donc pas besoin de conversir en JQuery
+	console.log(element);
 
 	let a = new Article(element.id, element.title, element.description);
 	a.addArticle();
 });
 
-let buttons = $('button');
-$.each(buttons,function(i,btn){
-	btn.onclick = viewdetailClick;
-});
+$.ajax({
+	url: "https://newsapi.org/v2/top-headlines?country=fr&apiKey=9b4e42c6404c48cab0f04cb200654d6c",
+  	method: "GET",
+    dataType: 'jsonp',
+    cors: true,
+    contentType:'application/json',
+    secure: true,
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
+      },
+      success: function (data){
+        console.log(data);
+      }
+})
+.done(function(data, textStatus, xhr) {
+	if(xhr.status >= 300 && xhr.status < 400)
+		console.log('Attention redirection');
+
+	console.log(data);
+
+	data.articles.forEach(article => function(){
+		let a = new Article(Article.getNextId(), article.title, article.description);
+		a.addArticle();
+	});
+})
+.fail(function(xhr, textStatus, error) {
+	console.log(xhr.status);
+	throw new Error(error);
+});*/
