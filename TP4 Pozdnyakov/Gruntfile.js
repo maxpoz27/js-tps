@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                     // includes files within path
                     {
                       src: ['node_modules/jquery/dist/jquery.min.js'], dest: 'dist/js/jquery.min.js', filter: 'isFile',
-                      src: ['node_modules/vue/dist/vue.js'], dest: 'dist/js/vue.js', filter: 'isFile'
+                      src: ['node_modules/vue/dist/vue.min.js'], dest: 'dist/js/vue.min.js', filter: 'isFile'
                   }
                 ]
               }
